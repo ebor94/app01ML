@@ -14,6 +14,7 @@ if(typeof listdata != "undefined"){
         <Card.Img className="img-responsive" width={100} height={350} src={item.imageUrl} />
         <Card.Body>
         <Card.Text>{item.title} </Card.Text>
+        <Card.Link target={"_blank"} href={item.url}>View More</Card.Link>
         </Card.Body>
       </Card>
       </Col>      

@@ -1,19 +1,11 @@
 import {GetApi} from '../middleware/api'
-const redis = require("redis");
-let redisClient;
-
-(async () => {
-  redisClient = redis.createClient();
-  redisClient.on("error", (error) => console.error(`Error : ${error}`));
-  await redisClient.connect();
-})();
-
+import  redisClient from '../model/SpaceModel'
 
 export const cacheData = async function (req, res, next) {
-  const species="";
+  const news="";
   let results;
   try {
-    const cacheResults = await redisClient.get(species);
+    const cacheResults = await redisClient.get(news);
     if (cacheResults) {
       results = JSON.parse(cacheResults);
       res.send({
