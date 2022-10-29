@@ -16,14 +16,9 @@ const [page, setpage] = useState(0);
 const getData = async () => {
   const response = await GetDataApi();
    SetDatax2([...response.data].splice(0, itemsPage)); 
-  setdatax(response.data)
-  
+  setdatax(response.data) 
 
-  if(datax.length>0){
-    SetDatax2([...datax].splice(0, itemsPage)); 
-    console.log(datax);
-   console.log(Datax2);
-  }
+ 
 
  
 };
